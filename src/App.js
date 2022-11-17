@@ -1,9 +1,10 @@
-import './App.css';
+import React from 'react';
+import Bank from './pages/Bank';
 
 function App() {
   return (
     <div>
-      <p></p>
+      <Bank></Bank>
     </div>
   );
 }
