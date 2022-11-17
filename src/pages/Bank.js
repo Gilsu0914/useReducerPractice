@@ -1,6 +1,6 @@
 import React, { useState, useReducer } from 'react';
 
-//리듀서
+//리듀서노예
 const reducer = (state, action) => {
   switch (action.type) {
     case '예금':
@@ -13,20 +13,19 @@ const reducer = (state, action) => {
 };
 
 function Bank() {
-  const [number, setNumber] = useState(0);
-
   //1000단위 돈 입력값
+  const [number, setNumber] = useState(0);
   const inputMoneyHandler = (e) => {
     setNumber(parseInt(e.target.value));
   };
 
-  //리듀서후크: 출금&예금
+  //useReducer: 출금&예금
   const initialState = 0;
   const [money, dispatch] = useReducer(reducer, initialState);
 
-  //예금 dispatch
+  //dispatch 예금
   const deposit = () => dispatch({ type: '예금', payload: number });
-  //출금 dispatch
+  //dispatch 출금
   const withdraw = () => dispatch({ type: '출금', payload: number });
 
   return (
